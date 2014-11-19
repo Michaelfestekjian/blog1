@@ -1,7 +1,6 @@
 <?php
-    require_once(__DIR__ . "/../model/config.php");
-    //file to require once in the config.php
-    
+require_once(__DIR__ . "/../model/config.php");
+//file to require once in the config.php
 ?>
 <nav>
     <ul>
