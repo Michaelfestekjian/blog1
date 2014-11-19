@@ -4,7 +4,6 @@ require_once(__DIR__ . "/../model/config.php");
 //using the directory
 
 
-$connection = new mysqli($host, $username, $password, $database);
 //
 //new database
     $title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
@@ -24,4 +23,4 @@ echo "<p>$connection->error</p>";
 }
 //echos out that there is an error when ther is one 
     
-    $connection->close();
+  

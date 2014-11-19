@@ -10,3 +10,7 @@
     // after the username u add the password 
     $database = "blog_db";
     //must be in this order beacuse this is the order we set up our folders in 
+
+    
+    $connection = new database($host, $username, $password, $database);
+    //database object

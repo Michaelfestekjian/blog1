@@ -2,6 +2,7 @@
 require_once(__DIR__ ."/../model/config.php");
 
     $connection = new mysqli($host, $username, $password);
+    //mifht not need this line of code 
     //this is the order we set up the username and password in 
     //has our hos name and password stored
 
