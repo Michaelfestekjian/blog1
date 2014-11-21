@@ -2,10 +2,6 @@
 
 require_once(__DIR__ . "/../model/config.php");
 
-
-
-
-
 $query = $connection->query("CREATE TABLE posts ("
         . "id int(11) NOT NULL AUTO_INCREMENT,"
         . "title varchar(255) NOT NULL,"
@@ -15,8 +11,6 @@ $query = $connection->query("CREATE TABLE posts ("
 
 if ($query) {
     echo"sucessfully create table: posts";
-}
-
-else{
+} else {
     echo"<p>$connection->error<p>";
 }

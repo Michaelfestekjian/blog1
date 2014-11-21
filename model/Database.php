@@ -9,9 +9,9 @@ class Database {
     private $host;
     private $username;
     private $password;
-    private $Database;
+    private $database;
     //added the error beacuse we never has one 
-    public  $error;
+    public $error;
 
     public function __construckt($host, $username, $password, $atabase) {
         $this->host = $hosts;
@@ -19,16 +19,16 @@ class Database {
         $this->password = $password;
         $this->database = $database;
         //keeping this public beacuse no 1 needs to c it 
-        
+
         $this->connection = new mysqli($host, $username, $password);
-        
+
 //mifht not need this line of code 
 //this is the order we set up the username and password in 
 //has our hos name and password stored
         if ($this->connection->connect_error) {
-            
+
             die("error: " . $this->connection->connect_error);
-            
+
             // this is saying that if there is an error to just close and shut down the program
         } else {
             echo "success" . $this->connection->host_info;
@@ -48,7 +48,7 @@ class Database {
     }
 
     public function openconnection() {
-        $this->connection = new mysql1($this->host, $this->username, $this->password, $this->database);
+        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
         //this is to call we dont need dollersighn in front of the word only iun front of this 
 
         if ($this->connection->connect_error) {
@@ -67,13 +67,13 @@ class Database {
         }
     }
 
-    public function query() {
+    public function query($string) {
         $this->openconnection();
         //opening the connection 
 
         $query = $this->connection->query($string);
-        
-        if(!$query){
+
+        if (!$query) {
             $this->error = $this->connection->error;
             //shpwing that we have an echo error
         }
