@@ -9,14 +9,14 @@ $title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
 $post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
 //the $title is to get the title from the database 
 
-$query = $connection->query("INSERT INTO posts SET title = '$title'. post = '$post'");
+$query = $_SESSION["connection"]->query("INSERT INTO posts SET title = '$title'. post = '$post'");
 //the $query to the database    
 
 if ($query) {
     echo "<p>sucessfully inserted post: $title</p>";
     //echos out that the connection post have been enterd
 } else {
-    echo "<p>$connection->error</p>";
+    echo "<p>" . $_SESSION["connection"]->error . "</p>";
 }
 //echos out that there is an error when ther is one 
     
