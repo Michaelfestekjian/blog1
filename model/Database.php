@@ -1,5 +1,7 @@
 <?php
 
+
+
 //no body can modify these veriable thes are hidden
 class Database {
 
@@ -13,8 +15,8 @@ class Database {
     //added the error beacuse we never has one 
     public $error;
 
-    public function __construckt($host, $username, $password, $atabase) {
-        $this->host = $hosts;
+    public function __construckt($host, $username, $password, $database) {
+        $this->host = $host;
         $this->username = $username;
         $this->password = $password;
         $this->database = $database;
