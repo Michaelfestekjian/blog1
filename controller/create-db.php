@@ -24,10 +24,8 @@ $query = $_SESSION["connection"]->query("CREATE TABLE users("
         . "PRIMARY KEY (ID))");
 //not null means you cant leave it blank
 
-if($query) {
+if ($query) {
     echo "<p>successfully created table: users</p>";
-}
-
-else{
+} else {
     echo "<p>" . $_SESSION["connection"]->error . "</p>";
 }

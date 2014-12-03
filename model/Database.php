@@ -1,7 +1,4 @@
 <?php
-
-
-
 //no body can modify these veriable thes are hidden
 class Database {
 
