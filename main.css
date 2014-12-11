@@ -1,2 +1,4 @@
-
-<body background="jo.jpg">
+body {
+    background-image: url("yo.jpg");
+    background-color: #0000FF;
+}

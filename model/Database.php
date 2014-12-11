@@ -12,7 +12,7 @@ class Database {
     //added the error beacuse we never has one 
     public $error;
 
-    public function __construckt($host, $username, $password, $database) {
+    public function __construct($host, $username, $password, $database) {
         $this->host = $host;
         $this->username = $username;
         $this->password = $password;
@@ -26,14 +26,9 @@ class Database {
 //has our hos name and password stored
         if ($this->connection->connect_error) {
 
-            die("error: " . $this->connection->connect_error);
-
-            // this is saying that if there is an error to just close and shut down the program
-        } else {
-            echo "success" . $this->connection->host_info;
-            //to connect to the host
-        }
-        $exists = $connection->select_db($database);
+            die("error: " . $this->$connection->connect_error);
+        } 
+        $exists = $this->connection->select_db($database);
 
         if (!$exists) {
             $query = $this->connection->query("CREATE DATABASE $database");
@@ -46,7 +41,7 @@ class Database {
         }
     }
 
-    public function openconnection() {
+    public function openConnection() {
         $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
         //this is to call we dont need dollersighn in front of the word only iun front of this 
 
@@ -57,7 +52,7 @@ class Database {
         }
     }
 
-    public function closeconnection() {
+    public function closeConnection() {
         //the reason it is public is beacuse we need to show it 
         if (isset($this->connection)) {
             //if tet is to call other ines of code
@@ -67,7 +62,7 @@ class Database {
     }
 
     public function query($string) {
-        $this->openconnection();
+        $this->openConnection();
         //opening the connection 
 
         $query = $this->connection->query($string);
@@ -77,7 +72,7 @@ class Database {
             //shpwing that we have an echo error
         }
 
-        $this->closeconnection();
+        $this->closeConnection();
         //closing the connection 
 
         return $query;

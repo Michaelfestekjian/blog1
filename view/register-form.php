@@ -1,20 +1,29 @@
-<form>
-    <div>
-        <label for="email">email: </label>
-        <input type="text" name="email />"
-    </div>
+<?php
+    require_once(__DIR__ . "/../model/config.php");
+?>
 
-    <label for="username">username: </label>
-    <input type="text" name="username />"
-           <div>
+<h1>Register</h1>
 
-        <label for="password">password: </label>
-        <input type="text" name="password />"
-    </div>
-    <button type="submit">Submit</button>
-    <!--makes the submit button that way we can enter our code -->
-    <div>
-
-    </div>
-
+<form method="post" action="<?php echo $path . "controller/create-user.php";?>"
+      
+      <div>
+        <label for="email">Email: </label>
+        <input type="text" name="Email" />
+      </div>
+      
+      <div>
+        <label for="username">Username: </label>
+        <input type="text" name="username" />
+      </div>
+      
+      <div>
+        <label for="password">Password: </label>
+        <input type="password" name="password" />
+      </div>
+    
+      <div>
+          <button type="submit">Submit</button>
+      </div>
+    
 </form>
+    
